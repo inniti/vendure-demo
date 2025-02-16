@@ -13,6 +13,11 @@ import {LandingPagePlugin} from './plugins/landing-page/landing-page-plugin';
 import {DemoModePlugin} from './plugins/demo-mode/demo-mode-plugin';
 import {HardenPlugin} from "@vendure/harden-plugin";
 
+
+const PUBLIC_URL = process.env.PUBLIC_URL;
+const STOREFRONT_URL = process.env.STOREFRONT_URL;
+
+
 export const config: VendureConfig = {
     apiOptions: {
         port: 3000,
@@ -29,7 +34,7 @@ export const config: VendureConfig = {
     },
     authOptions: {
         cookieOptions: {
-            secret: '9s8wl7vkd8',
+            secret: 'asdfjklö',
         },
         requireVerification: true,
         tokenMethod: ['cookie', 'bearer'],
@@ -53,7 +58,7 @@ export const config: VendureConfig = {
         AssetServerPlugin.init({
             route: 'assets',
             assetUploadDir: path.join(__dirname, '../static/assets'),
-            assetUrlPrefix: 'https://demo.vendure.io/assets/'
+            assetUrlPrefix: `${PUBLIC_URL}/assets/`
         }),
         EmailPlugin.init({
             route: 'mailbox',
@@ -62,9 +67,9 @@ export const config: VendureConfig = {
             outputPath: path.join(__dirname, '../static/email/output'),
             globalTemplateVars: {
                 fromAddress: '"Vendure Demo Store" <noreply@vendure.io>',
-                verifyEmailAddressUrl: 'https://demo.vendure.io/storefront/account/verify',
-                passwordResetUrl: 'https://demo.vendure.io/storefront/account/reset-password',
-                changeEmailAddressUrl: 'https://demo.vendure.io/storefront/account/change-email-address'
+                verifyEmailAddressUrl: `${STOREFRONT_URL}/account/verify`,
+                passwordResetUrl: `${STOREFRONT_URL}/account/reset-password`,
+                changeEmailAddressUrl: `${STOREFRONT_URL}/account/change-email-address`
             },
             devMode: true,
         }),
