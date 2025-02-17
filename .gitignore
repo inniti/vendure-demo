@@ -10,3 +10,4 @@ dist
 storefront.zip
 /build/
 deploy.tar
+.env

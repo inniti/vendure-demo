@@ -67,7 +67,7 @@ export const config: VendureConfig = {
             outputPath: path.join(__dirname, '../static/email/output'),
             globalTemplateVars: {
                 fromAddress: '"Vendure Demo Store" <noreply@vendure.io>',
-                verifyEmailAddressUrl: `${STOREFRONT_URL}/account/verify`,
+                verifyEmailAddressUrl: `${STOREFRONT_URL}/registration/verify`,
                 passwordResetUrl: `${STOREFRONT_URL}/account/reset-password`,
                 changeEmailAddressUrl: `${STOREFRONT_URL}/account/change-email-address`
             },
