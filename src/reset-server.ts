@@ -142,9 +142,9 @@ async function createTestCustomer(app: INestApplication) {
 
     console.log('Creating test customer');
     const customer = await customerService.create(ctx, {
-        firstName: 'Rio',
-        lastName: 'Zephyr',
-        emailAddress: 'test@vendure.io',
+        firstName: 'Max',
+        lastName: 'Mustermann',
+        emailAddress: 'test@inniti.de',
     }, 'test');
     if (isGraphQlErrorResult(customer)) {
         return;
