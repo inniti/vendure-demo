@@ -9,7 +9,7 @@
   "scripts": {
     "compile": "tsc",
     "compile:watch": "tsc --watch",
-    "dev": "ts-node src/index.ts",
+    "dev": "STOREFRONT_URL=http://localhost:4321 PUBLIC_URL=http://localhost:3000 ts-node src/index.ts",
     "dev:dashboard": "vite",
     "start": "node build/index.js"
   },
