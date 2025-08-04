@@ -1,4 +1,4 @@
-import { vendureDashboardPlugin } from "@vendure/dashboard/plugin";
+import { vendureDashboardPlugin } from "@vendure/dashboard/vite";
 import { pathToFileURL } from "url";
 import { defineConfig } from "vite";
 import { resolve, join } from "path";
@@ -15,12 +15,12 @@ export default defineConfig({
       // and custom fields that are configured.
       vendureConfigPath: pathToFileURL("./src/vendure-config.ts"),
       // Points to the location of your Vendure server.
-      adminUiConfig: { apiHost: "http://localhost", apiPort: 3000 },
+      api: { host: "http://localhost", port: 3000 },
       // When you start the Vite server, your Admin API schema will
       // be introspected and the types will be generated in this location.
       // These types can be used in your dashboard extensions to provide
       // type safety when writing queries and mutations.
-      gqlTadaOutputPath: "./src/gql",
+      gqlOutputPath: "./src/gql",
     }),
   ],
   resolve: {

@@ -16,8 +16,8 @@ import {
 import { HardenPlugin } from "@vendure/harden-plugin";
 import path from "path";
 import { DemoModePlugin } from "./plugins/demo-mode/demo-mode-plugin";
-import { LandingPagePlugin } from "./plugins/landing-page/landing-page-plugin";
 import { InnitiStorefrontPlugin } from "./plugins/inniti-storefront/inniti-storefront.plugin";
+import { LandingPagePlugin } from "./plugins/landing-page/landing-page-plugin";
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 const STOREFRONT_URL = process.env.STOREFRONT_URL;
