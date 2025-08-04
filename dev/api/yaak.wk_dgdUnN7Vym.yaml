@@ -1,0 +1,14 @@
+type: workspace
+model: workspace
+id: wk_dgdUnN7Vym
+createdAt: 2025-08-04T13:24:46.866866
+updatedAt: 2025-08-04T13:24:46.866868
+authentication: {}
+authenticationType: null
+description: ''
+headers: []
+name: Vendure Demo
+encryptionKeyChallenge: null
+settingValidateCertificates: true
+settingFollowRedirects: true
+settingRequestTimeout: 0

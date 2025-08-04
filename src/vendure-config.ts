@@ -18,9 +18,11 @@ import path from "path";
 import { DemoModePlugin } from "./plugins/demo-mode/demo-mode-plugin";
 import { InnitiStorefrontPlugin } from "./plugins/inniti-storefront/inniti-storefront.plugin";
 import { LandingPagePlugin } from "./plugins/landing-page/landing-page-plugin";
+import { RoutesPlugin } from "./plugins/routes/routes.plugin";
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 const STOREFRONT_URL = process.env.STOREFRONT_URL;
+const IS_DEV = process.env.APP_ENV === "dev";
 
 export const config: VendureConfig = {
   apiOptions: {
@@ -30,11 +32,16 @@ export const config: VendureConfig = {
     adminApiPlayground: {
       settings: { "request.credentials": "include" },
     },
-    adminApiDebug: true,
     shopApiPlayground: {
       settings: { "request.credentials": "include" },
     },
-    shopApiDebug: true,
+    trustProxy: IS_DEV ? false : 1,
+    ...(IS_DEV
+      ? {
+          adminApiDebug: true,
+          shopApiDebug: true,
+        }
+      : {}),
   },
   authOptions: {
     cookieOptions: {
@@ -52,6 +59,7 @@ export const config: VendureConfig = {
     synchronize: false,
     logging: false,
     database: path.join(__dirname, "../vendure.sqlite"),
+    migrations: [path.join(__dirname, "./migrations/*.+(js|ts)")],
   },
   paymentOptions: {
     paymentMethodHandlers: [dummyPaymentHandler],
@@ -59,7 +67,7 @@ export const config: VendureConfig = {
   customFields: {},
   plugins: [
     DefaultSchedulerPlugin.init(),
-    DefaultJobQueuePlugin,
+    DefaultJobQueuePlugin.init({ useDatabaseForBuffer: true }),
     AssetServerPlugin.init({
       route: "assets",
       assetUploadDir: path.join(__dirname, "../static/assets"),
@@ -101,6 +109,7 @@ export const config: VendureConfig = {
         fields: ["sku"],
       },
     }),
+    RoutesPlugin.init({}),
   ],
   schedulerOptions: {
     tasks: [

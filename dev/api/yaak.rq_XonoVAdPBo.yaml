@@ -1,0 +1,36 @@
+type: http_request
+model: http_request
+id: rq_XonoVAdPBo
+createdAt: 2025-08-04T13:26:55.613163
+updatedAt: 2025-08-04T16:02:25.318677
+workspaceId: wk_dgdUnN7Vym
+folderId: fl_ANmTnS8CUd
+authentication:
+  token: ${[ response.header(request='rq_w5Kv9FX6Xy', header=b64'dmVuZHVyZS1hdXRoLXRva2Vu', behavior='smart') ]}
+authenticationType: bearer
+body:
+  query: |
+    {
+      routes(options: {take: 10}) {
+        totalItems
+        items {
+          path
+          createdAt
+          updatedAt
+          entity
+          entityId
+        }
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: 5iqARbyvyF
+method: POST
+name: list routes
+sortPriority: -1754313897027.999
+url: ${[ adminApiUrl ]}
+urlParameters: []

@@ -1,0 +1,29 @@
+type: http_request
+model: http_request
+id: rq_JJyZYWVPFo
+createdAt: 2025-08-04T13:29:51.945517
+updatedAt: 2025-08-04T15:10:49.451701
+workspaceId: wk_dgdUnN7Vym
+folderId: fl_ANmTnS8CUd
+authentication:
+  token: ${[ response.header(request='rq_w5Kv9FX6Xy', header=b64'dmVuZHVyZS1hdXRoLXRva2Vu', behavior='smart') ]}
+authenticationType: bearer
+body:
+  query: |
+    mutation {
+      generateProductRoutes {
+        jobId
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: 5iqARbyvyF
+method: POST
+name: Generate routes for products
+sortPriority: -1754313897027.998
+url: ${[ adminApiUrl ]}
+urlParameters: []

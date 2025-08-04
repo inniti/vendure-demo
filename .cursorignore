@@ -1,0 +1,6 @@
+dev/api/
+data-cache/
+dist/
+deploy.tar
+**/*.sqlite
+package-lock.json

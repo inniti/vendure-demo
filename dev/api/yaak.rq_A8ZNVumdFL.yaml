@@ -1,0 +1,33 @@
+type: http_request
+model: http_request
+id: rq_A8ZNVumdFL
+createdAt: 2025-08-04T13:42:43.172234
+updatedAt: 2025-08-04T15:05:40.627387
+workspaceId: wk_dgdUnN7Vym
+folderId: fl_ANmTnS8CUd
+authentication:
+  token: ${[ response.header(request='rq_w5Kv9FX6Xy', header=b64'dmVuZHVyZS1hdXRoLXRva2Vu', behavior='smart') ]}
+authenticationType: bearer
+body:
+  query: |
+    {
+      routeByPath(path: "/p/laptop") {
+        path
+        createdAt
+        updatedAt
+        entity
+        entityId
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: 5iqARbyvyF
+method: POST
+name: get route
+sortPriority: -1754313897027.998
+url: ${[ adminApiUrl ]}
+urlParameters: []

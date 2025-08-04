@@ -1,0 +1,30 @@
+type: http_request
+model: http_request
+id: rq_w5Kv9FX6Xy
+createdAt: 2025-08-04T13:24:57.031481
+updatedAt: 2025-08-04T13:26:50.141327
+workspaceId: wk_dgdUnN7Vym
+folderId: fl_ANmTnS8CUd
+authentication: {}
+authenticationType: null
+body:
+  query: |
+    mutation {
+      authenticate(input: {native: {username: "superadmin", password: "superadmin"}}) {
+        ... on CurrentUser {
+          id
+        }
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: 5iqARbyvyF
+method: POST
+name: Login
+sortPriority: -1754313897028.0
+url: ${[ adminApiUrl ]}
+urlParameters: []
