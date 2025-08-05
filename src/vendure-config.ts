@@ -19,6 +19,7 @@ import { DemoModePlugin } from "./plugins/demo-mode/demo-mode-plugin";
 import { InnitiStorefrontPlugin } from "./plugins/inniti-storefront/inniti-storefront.plugin";
 import { LandingPagePlugin } from "./plugins/landing-page/landing-page-plugin";
 import { RoutesPlugin } from "./plugins/routes/routes.plugin";
+import { StorefrontPlugin } from "./plugins/storefront/storefront.plugin";
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 const STOREFRONT_URL = process.env.STOREFRONT_URL;
@@ -110,6 +111,7 @@ export const config: VendureConfig = {
       },
     }),
     RoutesPlugin.init({}),
+    StorefrontPlugin.init({}),
   ],
   schedulerOptions: {
     tasks: [
@@ -119,5 +121,8 @@ export const config: VendureConfig = {
         },
       }),
     ],
+  },
+  settingsStoreFields: {
+    "vendure.dashboard.userSettings": [],
   },
 };

@@ -1,0 +1,24 @@
+type: http_request
+model: http_request
+id: rq_uAaV34S8y2
+createdAt: 2025-08-05T07:12:27.754678
+updatedAt: 2025-08-05T07:13:58.805293
+workspaceId: wk_dgdUnN7Vym
+folderId: fl_ANmTnS8CUd
+authentication:
+  token: ${[ response.header(request='rq_w5Kv9FX6Xy', header=b64'dmVuZHVyZS1hdXRoLXRva2Vu', behavior='smart') ]}
+authenticationType: bearer
+body:
+  query: "{\n  \n  pages(options: {take: 10}) {\n    totalItems\n    items {\n      createdAt\n    }\n  }\n}\n"
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: 5iqARbyvyF
+method: POST
+name: list pages
+sortPriority: -1754313897027.998
+url: ${[ adminApiUrl ]}
+urlParameters: []
