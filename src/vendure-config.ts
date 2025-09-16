@@ -6,6 +6,7 @@ import {
   DefaultSchedulerPlugin,
   DefaultSearchPlugin,
   dummyPaymentHandler,
+  LanguageCode,
   VendureConfig,
 } from "@vendure/core";
 import {
@@ -65,7 +66,16 @@ export const config: VendureConfig = {
   paymentOptions: {
     paymentMethodHandlers: [dummyPaymentHandler],
   },
-  customFields: {},
+  customFields: {
+    Product: [
+      {
+        name: "benefits",
+        list: true,
+        type: "localeString",
+        label: [{ languageCode: LanguageCode.en, value: "Benefits" }],
+      },
+    ],
+  },
   plugins: [
     DefaultSchedulerPlugin.init(),
     DefaultJobQueuePlugin.init({ useDatabaseForBuffer: true }),
