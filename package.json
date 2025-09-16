@@ -8,27 +8,29 @@
   "scripts": {
     "compile": "tsc",
     "compile:watch": "tsc --watch",
-    "dev": "STOREFRONT_URL=http://localhost:4321 PUBLIC_URL=http://localhost:3000 ts-node src/index.ts",
+    "dev:app": "nodemon --inspect src/app.ts",
+    "dev:worker": "nodemon --inspect src/worker.ts",
     "dev:dashboard": "vite",
     "start": "node dist/demo.js"
   },
   "dependencies": {
-    "@vendure/admin-ui-plugin": "^3.4.0",
-    "@vendure/asset-server-plugin": "^3.4.0",
-    "@vendure/core": "^3.4.0",
-    "@vendure/create": "^3.4.0",
-    "@vendure/dashboard": "^3.4.0",
-    "@vendure/email-plugin": "^3.4.0",
-    "@vendure/harden-plugin": "^3.4.0",
-    "better-sqlite3": "^11.6.0",
-    "fs-extra": "^11.3.0",
+    "@vendure/admin-ui-plugin": "^3.4.2",
+    "@vendure/asset-server-plugin": "^3.4.2",
+    "@vendure/core": "^3.4.2",
+    "@vendure/create": "^3.4.2",
+    "@vendure/dashboard": "^3.4.2",
+    "@vendure/email-plugin": "^3.4.2",
+    "@vendure/harden-plugin": "^3.4.2",
+    "better-sqlite3": "^11.10.0",
+    "fs-extra": "^11.3.2",
     "graphql-request": "^7.2.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@vendure/cli": "^3.4.0",
+    "@vendure/cli": "^3.4.2",
     "ts-node": "^10.9.2",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "nodemon": "^3.1.10"
   },
   "peerDependencies": {
     "typeorm": "^0.3.25"

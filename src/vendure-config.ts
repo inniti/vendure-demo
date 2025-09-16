@@ -57,7 +57,7 @@ export const config: VendureConfig = {
   },
   dbConnectionOptions: {
     type: "better-sqlite3",
-    synchronize: false,
+    synchronize: true,
     logging: false,
     database: path.join(__dirname, "../vendure.sqlite"),
     migrations: [path.join(__dirname, "./migrations/*.+(js|ts)")],
@@ -111,7 +111,7 @@ export const config: VendureConfig = {
       },
     }),
     RoutesPlugin.init({}),
-    StorefrontPlugin.init({}),
+    // StorefrontPlugin.init({}),
   ],
   schedulerOptions: {
     tasks: [

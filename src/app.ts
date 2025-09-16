@@ -1,8 +1,4 @@
-import { bootstrap, runMigrations } from "@vendure/core";
+import { bootstrap } from "@vendure/core";
 import { config } from "./vendure-config";
 
-runMigrations(config)
-  .then(() => bootstrap(config))
-  .catch((err) => {
-    console.log(err);
-  });
+bootstrap(config).catch(console.error);

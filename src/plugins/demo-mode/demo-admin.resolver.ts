@@ -63,27 +63,27 @@ export class DemoAdminResolver {
         }
     }
 
-    @Mutation()
-    @Allow(Permission.DeleteCatalog)
-    deleteProduct(): Promise<Administrator> {
-        throw new IllegalOperationError('This action is not allowed in the demo');
-    }
+    // @Mutation()
+    // @Allow(Permission.DeleteCatalog)
+    // deleteProduct(): Promise<Administrator> {
+    //     throw new IllegalOperationError('This action is not allowed in the demo');
+    // }
 
-    @Mutation()
-    @Allow(Permission.UpdateCatalog)
-    updateCollection() {
-        throw new IllegalOperationError('This action is not allowed in the demo');
-    }
+    // @Mutation()
+    // @Allow(Permission.UpdateCatalog)
+    // updateCollection() {
+    //     throw new IllegalOperationError('This action is not allowed in the demo');
+    // }
 
-    @Mutation()
-    @Allow(Permission.UpdateCatalog)
-    moveCollection(): Promise<Administrator> {
-        throw new IllegalOperationError('This action is not allowed in the demo');
-    }
+    // @Mutation()
+    // @Allow(Permission.UpdateCatalog)
+    // moveCollection(): Promise<Administrator> {
+    //     throw new IllegalOperationError('This action is not allowed in the demo');
+    // }
 
-    @Mutation()
-    @Allow(Permission.DeleteCatalog)
-    deleteCollection(): Promise<Administrator> {
-        throw new IllegalOperationError('This action is not allowed in the demo');
-    }
+    // @Mutation()
+    // @Allow(Permission.DeleteCatalog)
+    // deleteCollection(): Promise<Administrator> {
+    //     throw new IllegalOperationError('This action is not allowed in the demo');
+    // }
 }
